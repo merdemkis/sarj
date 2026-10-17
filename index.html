@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Şarj Maliyet Hesaplayıcı</title>
+<style>
+:root{--bg:#f6f7f9;--cd:#fff;--tx:#1b1f24;--mu:#667085;--bd:#e2e5ea;--ac:#0a7d4f;--a2:#e6f5ee;--wa:#b54708}
+@media(prefers-color-scheme:dark){:root{--bg:#111418;--cd:#1a1f26;--tx:#eceff3;--mu:#98a2b3;--bd:#2c333d;--ac:#3ddc97;--a2:#14352a;--wa:#fdb022}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:16px}h1{font-size:20px}h2{font-size:15px;margin:0 0 10px}
+.c{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:12px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+label{display:block;font-size:12px;color:var(--mu);margin-bottom:3px}
+input,select{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:8px;width:100%}
+.big{font-size:28px;font-weight:700;color:var(--ac)}.mu{color:var(--mu);font-size:13px}.warn{color:var(--wa)}
+.rec{background:var(--a2);border-radius:8px;padding:10px;margin-top:10px}
+.ops{display:flex;flex-wrap:wrap;gap:6px}.ops label{display:flex;gap:5px;align-items:center;font-size:13px;color:var(--tx);border:1px solid var(--bd);border-radius:20px;padding:3px 10px;margin:0}.ops input{width:auto}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:6px;border-bottom:1px solid var(--bd);white-space:nowrap}
+</style></head><body><main>
+<h1>⚡ Şarj Maliyet Hesaplayıcı</h1>
+<div class="c"><p class="mu" id="src"></p></div>
+<div class="c"><h2>Bölgemde bulunan operatörler</h2>
+<div class="g" style="margin-bottom:10px"><div><label>Bölge adı</label><input id="reg" value="Kayseri"></div></div>
+<div class="ops" id="ops"></div></div>
+<div class="c"><h2>Şarj planı</h2><div class="g">
+<div><label>İstasyon (operatör)</label><select id="st"></select></div>
+<div><label>Şarj tipi</label><select id="ty"><option value="dc">DC (hızlı)</option><option value="ac">AC (yavaş)</option></select></div>
+<div><label>Tarife kademesi</label><select id="tr"><option value="hi">Yüksek (garantili tahmin)</option><option value="lo">Düşük</option></select></div>
+<div><label>Batarya (kWh)</label><input id="cap" type="number" value="60"></div>
+<div><label>Şu anki doluluk (%)</label><input id="from" type="number" value="20"></div>
+<div><label>Hedef doluluk (%)</label><input id="to" type="number" value="80"></div>
+<div><label>Aracın max DC gücü (kW)</label><input id="vdc" type="number" value="100"></div>
+<div><label>Aracın AC gücü (kW)</label><input id="vac" type="number" value="11"></div>
+<div><label>Şarj kaybı (%)</label><input id="loss" type="number" value="8"></div></div></div>
+<div class="c" id="res"></div>
+<div class="c"><h2>Bölgendeki operatörlerin karşılaştırması</h2><div class="tw"><table><thead><tr><th>Operatör</th><th>₺/kWh</th><th>Tutar</th><th>Süre</th></tr></thead><tbody id="tb"></tbody></table></div></div>
+<script>
+// Scraper'ın prices.json'u güncellediği GitHub deposunun "raw" adresi (KULLANICI/REPO kısmını değiştir):
+const PRICES_URL="https://raw.githubusercontent.com/KULLANICI/REPO/main/prices.json";
+let D={"updated":"2026-10-14T00:00:00+00:00","source":"seed","ops":{"5Şarj":[15.9,15.9,8.99,8.99],"Aksa Şarj":[11.99,13.99,9.9,10.9],"Astor Şarj":[13.99,13.99,9.89,9.89],"Beefull":[13.99,13.99,9.9,9.9],"CV Charging":[13.49,13.49,9.99,9.99],"Elaris":[10.0,10.0,8.49,9.49],"Enyakit":[14.9,14.9,null,null],"Eşarj":[9.9,14.9,9.9,9.9],"EV-Bee":[14.98,14.98,9.95,9.95],"GIO EV":[10.99,13.73,null,null],"Lumicle":[13.49,13.49,9.99,9.99],"Oncharge":[13.5,13.5,9.99,9.99],"Oto-Jet":[15.49,15.49,10.99,10.99],"Otopriz":[9.73,9.73,7.93,7.93],"Power Şarj":[13.99,13.99,11.19,11.19],"RST Charge Point":[13.99,13.99,5.9,5.9],"Sarjon":[11.99,13.99,10.99,10.99],"Sharz":[11.99,11.99,9.49,9.49],"Toger":[13.39,13.39,9.9,9.9],"Tora Şarj":[13.49,13.49,9.99,9.99],"Trugo":[12.0,14.98,9.95,9.95],"Tuncmatik Charge":[15.49,15.49,10.99,10.99],"Volti":[12.99,12.99,9.99,9.99],"Voltrun":[12.9,12.9,9.9,9.9],"WAT Mobilite":[11.99,14.49,9.99,10.99],"ZES":[12.99,16.49,10.99,10.99]}},from="gömülü örnek veri";
+const $=i=>document.getElementById(i),K="sarj2";
+const fm=n=>n.toLocaleString("tr-TR",{minimumFractionDigits:2,maximumFractionDigits:2});
+const dur=h=>{const m=Math.round(h*60);return m>=60?Math.floor(m/60)+" sa "+m%60+" dk":m+" dk"};
+let P={sel:null};try{P=JSON.parse(localStorage.getItem(K))||P}catch(e){}
+const IDS=["reg","st","ty","tr","cap","from","to","vdc","vac","loss"];
+IDS.forEach(i=>{if(P[i]!=null&&i!="st")$(i).value=P[i]});
+function save(){IDS.forEach(i=>P[i]=$(i).value);try{localStorage.setItem(K,JSON.stringify(P))}catch(e){}}
+function price(n){const o=D.ops[n],ty=$("ty").value,hi=$("tr").value=="hi";const v=ty=="dc"?(hi?o[1]:o[0]):(hi?o[3]:o[2]);return v}
+function build(){
+ const names=Object.keys(D.ops).sort((a,b)=>a.localeCompare(b,"tr"));
+ if(!P.sel)P.sel=names;
+ $("ops").innerHTML=names.map(n=>`<label><input type="checkbox" data-n="${n.replace(/"/g,"&quot;")}" ${P.sel.includes(n)?"checked":""}>${n}</label>`).join("");
+ document.querySelectorAll("#ops input").forEach(c=>c.onchange=()=>{P.sel=[...document.querySelectorAll("#ops input:checked")].map(x=>x.dataset.n);render()});
+}
+function render(){
+ save();
+ const age=(Date.now()-new Date(D.updated))/36e5,d=new Date(D.updated).toLocaleString("tr-TR");
+ $("src").innerHTML=`Fiyat verisi: <b>${d}</b> (${from}) ${age>20?'<span class="warn">⚠ 20 saatten eski, otomatik güncelleme çalışmıyor olabilir.</span>':"✓ güncel"}`;
+ const ty=$("ty").value,cap=+$("cap").value,f=+$("from").value,t=+$("to").value,l=+$("loss").value/100;
+ const bat=Math.max(0,cap*(t-f)/100),grid=bat/(1-l),kw=ty=="dc"?+$("vdc").value*.75:+$("vac").value;
+ const rows=P.sel.filter(n=>D.ops[n]&&price(n)!=null).map(n=>({n,p:price(n),c:price(n)*grid})).sort((a,b)=>a.c-b.c);
+ const cur=$("st").value;
+ $("st").innerHTML=rows.map(r=>`<option ${r.n==cur?"selected":""}>${r.n}</option>`).join("");
+ const s=rows.find(r=>r.n==$("st").value)||rows[0];
+ if(!s||t<=f||t>100||f<0){$("res").innerHTML='<p class="warn">Bölgende en az bir operatör seç; hedef doluluk mevcut dolulaktan büyük olmalı.</p>';$("tb").innerHTML="";return}
+ const best=rows[0],h=grid/kw;
+ $("res").innerHTML=`<h2>%${f} → %${t} · ${s.n}</h2><div class="big">${fm(s.c)} ₺</div>
+ <div class="mu">Bataryaya giren ${fm(bat)} kWh · faturalanan ${fm(grid)} kWh · ${fm(s.p)} ₺/kWh · tahmini süre ${dur(h)}</div>
+ <div class="rec">${best.n==s.n?"✅ Bölgendeki seçenekler arasında en ucuzu bu.":`💡 <b>${best.n}</b> daha ucuz: <b>${fm(best.c)} ₺</b> (${fm(s.c-best.c)} ₺ tasarruf).`}</div>`;
+ $("tb").innerHTML=rows.map(r=>`<tr><td>${r.n}</td><td>${fm(r.p)}</td><td>${fm(r.c)} ₺</td><td>${dur(h)}</td></tr>`).join("");
+}
+IDS.forEach(i=>$(i).addEventListener("input",render));
+(async()=>{build();render();
+ for(const u of [PRICES_URL,"prices.json"]){try{const r=await fetch(u,{cache:"no-store"});if(!r.ok)continue;const j=await r.json();if(j.ops&&Object.keys(j.ops).length){D=j;from=u==PRICES_URL?"otomatik güncelleme":"yerel dosya";break}}catch(e){}}
+ build();render()})();
+</script></main></body></html>
