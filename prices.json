@@ -1,7 +1,13 @@
 {
- "updated": "2026-10-21T09:46:46+00:00",
- "source": "https://www.araclo.com/elektrikli-arac-sarj-tarifeleri",
+ "updated": "2026-10-21T16:30:11+00:00",
+ "source": "araclo.com + sarjfiyatlari.com.tr",
  "ops": {
+  "360° enerji": [
+   12.49,
+   12.49,
+   9.49,
+   9.49
+  ],
   "5Şarj": [
    15.9,
    15.9,
@@ -32,23 +38,23 @@
    9.99,
    9.99
   ],
-  "Elaris": [
-   10.0,
-   10.0,
-   8.49,
-   9.49
+  "D-Charge": [
+   14.9,
+   14.9,
+   10.9,
+   10.9
   ],
-  "Enyakit": [
-   14.9,
-   14.9,
-   null,
-   null
+  "E Econ": [
+   12.49,
+   12.49,
+   9.99,
+   9.99
   ],
-  "Esarj": [
-   14.9,
-   14.9,
-   9.9,
-   9.9
+  "EC EVC Charge": [
+   13.79,
+   13.79,
+   9.79,
+   9.79
   ],
   "EV-Bee": [
    14.98,
@@ -56,17 +62,113 @@
    9.95,
    9.95
   ],
+  "Elaris": [
+   10.0,
+   10.0,
+   8.49,
+   9.49
+  ],
+  "Electrise": [
+   11.0,
+   11.0,
+   8.5,
+   8.5
+  ],
+  "Enyakit": [
+   14.9,
+   14.9,
+   null,
+   null
+  ],
+  "Epsis": [
+   12.5,
+   12.5,
+   9.9,
+   9.9
+  ],
+  "Esarj": [
+   14.9,
+   14.9,
+   9.9,
+   9.9
+  ],
+  "Fastgo": [
+   12.49,
+   12.49,
+   9.49,
+   9.49
+  ],
+  "FixCharge": [
+   14.98,
+   14.98,
+   9.98,
+   9.98
+  ],
+  "Fortis Şarj": [
+   11.99,
+   11.99,
+   8.99,
+   8.99
+  ],
+  "G-Charge": [
+   12.99,
+   12.99,
+   9.99,
+   9.99
+  ],
   "GIO EV": [
    10.99,
    13.73,
    null,
    null
   ],
+  "Hızzlan Charge / N'Drive": [
+   12.99,
+   12.99,
+   9.99,
+   9.99
+  ],
+  "K-Şarj": [
+   11.65,
+   11.65,
+   9.15,
+   9.15
+  ],
   "Lumicle": [
    13.49,
    13.49,
    9.99,
    9.99
+  ],
+  "Magicline": [
+   13.5,
+   13.5,
+   9.0,
+   9.0
+  ],
+  "Miggo (Migros)": [
+   12.5,
+   12.5,
+   9.5,
+   9.5
+  ],
+  "Multiforce": [
+   13.49,
+   13.49,
+   10.5,
+   10.5
+  ],
+  "Neva Şarj": [
+   13.9,
+   13.9,
+   9.9,
+   9.9
+  ],
+  "Obişarj": [
+   15.95,
+   15.95,
+   10.99,
+   10.99
   ],
   "Oncharge": [
    13.5,
@@ -86,11 +188,47 @@
    7.93,
    7.93
   ],
+  "Otowatt": [
+   11.99,
+   11.99,
+   9.49,
+   9.49
+  ],
+  "Ovolt": [
+   10.49,
+   10.49,
+   9.99,
+   9.99
+  ],
+  "Petrol Ofisi e-POwer": [
+   11.99,
+   11.99,
+   8.99,
+   8.99
+  ],
+  "Plug&Drive (PGD Enerji)": [
+   8.9,
+   8.9,
+   11.9,
+   11.9
+  ],
+  "Porty": [
+   9.9,
+   9.9,
+   8.4,
+   8.4
+  ],
   "Power Şarj": [
    13.99,
    13.99,
    11.19,
    11.19
+  ],
+  "RHG ENERTÜRK": [
+   13.5,
+   13.5,
+   8.25,
+   8.25
   ],
   "RST Charge Point": [
    13.99,
@@ -98,17 +236,59 @@
    5.9,
    5.9
   ],
+  "Rönesans Charger": [
+   13.99,
+   13.99,
+   9.99,
+   9.99
+  ],
   "Sarjon": [
    11.99,
    13.99,
    10.99,
    10.99
   ],
+  "SepaşCharge": [
+   12.9,
+   12.9,
+   9.9,
+   9.9
+  ],
   "Sharz": [
    11.99,
    11.99,
    9.49,
    9.49
+  ],
+  "Shell Recharge": [
+   13.5,
+   13.5,
+   11.99,
+   11.99
+  ],
+  "Solarşarj": [
+   16.49,
+   16.49,
+   12.99,
+   12.99
+  ],
+  "Swapp": [
+   10.0,
+   10.0,
+   8.0,
+   8.0
+  ],
+  "TEDY": [
+   11.4,
+   11.4,
+   9.9,
+   9.9
+  ],
+  "Tesla Supercharger": [
+   11.7,
+   11.7,
+   8.9,
+   8.9
   ],
   "Toger": [
    13.39,
@@ -134,6 +314,24 @@
    10.99,
    10.99
   ],
+  "TÜVTÜRK": [
+   13.7,
+   13.7,
+   9.9,
+   9.9
+  ],
+  "VOLTGO": [
+   12.4,
+   12.4,
+   9.5,
+   9.5
+  ],
+  "Vale": [
+   15.33,
+   15.33,
+   9.59,
+   9.59
+  ],
   "Volti": [
    12.99,
    12.99,
@@ -146,6 +344,12 @@
    9.9,
    9.9
   ],
+  "Vzx Şarj (Vizyoneks)": [
+   12.0,
+   12.0,
+   8.0,
+   8.0
+  ],
   "WAT Mobilite": [
    14.49,
    14.49,
@@ -157,6 +361,154 @@
    16.49,
    10.99,
    10.99
+  ],
+  "Zeplin Enerji": [
+   10.3,
+   10.3,
+   10.3,
+   10.3
+  ],
+  "iŞarj": [
+   13.49,
+   13.49,
+   9.98,
+   9.98
+  ],
+  "Şarj Mahal": [
+   12.99,
+   12.99,
+   9.99,
+   9.99
   ]
+ },
+ "upd": {
+  "5Şarj": "2026-10-21T16:30:11+00:00",
+  "Aksa Sarj": "2026-10-21T16:30:11+00:00",
+  "Astor Sarj": "2026-10-21T16:30:11+00:00",
+  "Beefull": "2026-10-21T16:30:11+00:00",
+  "CV Charging": "2026-10-21T16:30:11+00:00",
+  "Elaris": "2026-10-21T16:30:11+00:00",
+  "Enyakit": "2026-10-21T16:30:11+00:00",
+  "Esarj": "2026-10-21T16:30:11+00:00",
+  "EV-Bee": "2026-10-21T16:30:11+00:00",
+  "GIO EV": "2026-10-21T16:30:11+00:00",
+  "Lumicle": "2026-10-21T16:30:11+00:00",
+  "Oncharge": "2026-10-21T16:30:11+00:00",
+  "Oto-Jet": "2026-10-21T16:30:11+00:00",
+  "Otopriz": "2026-10-21T16:30:11+00:00",
+  "Power Şarj": "2026-10-21T16:30:11+00:00",
+  "RST Charge Point": "2026-10-21T16:30:11+00:00",
+  "Sarjon": "2026-10-21T16:30:11+00:00",
+  "Sharz": "2026-10-21T16:30:11+00:00",
+  "Toger": "2026-10-21T16:30:11+00:00",
+  "Tora Şarj": "2026-10-21T16:30:11+00:00",
+  "Trugo": "2026-10-21T16:30:11+00:00",
+  "Tuncmatik Charge": "2026-10-21T16:30:11+00:00",
+  "Volti": "2026-10-21T16:30:11+00:00",
+  "Voltrun": "2026-10-21T16:30:11+00:00",
+  "WAT Mobilite": "2026-10-21T16:30:11+00:00",
+  "ZES": "2026-10-21T16:30:11+00:00",
+  "Swapp": "2026-10-21T16:30:11+00:00",
+  "Vzx Şarj (Vizyoneks)": "2026-10-21T16:30:11+00:00",
+  "Tesla Supercharger": "2026-10-21T16:30:11+00:00",
+  "Magicline": "2026-10-21T16:30:11+00:00",
+  "360° enerji": "2026-10-21T16:30:11+00:00",
+  "Fastgo": "2026-10-21T16:30:11+00:00",
+  "Miggo (Migros)": "2026-10-21T16:30:11+00:00",
+  "Epsis": "2026-10-21T16:30:11+00:00",
+  "Neva Şarj": "2026-10-21T16:30:11+00:00",
+  "SepaşCharge": "2026-10-21T16:30:11+00:00",
+  "TEDY": "2026-10-21T16:30:11+00:00",
+  "TÜVTÜRK": "2026-10-21T16:30:11+00:00",
+  "FixCharge": "2026-10-21T16:30:11+00:00",
+  "E Econ": "2026-10-21T16:30:11+00:00",
+  "G-Charge": "2026-10-21T16:30:11+00:00",
+  "Rönesans Charger": "2026-10-21T16:30:11+00:00",
+  "Zeplin Enerji": "2026-10-21T16:30:11+00:00",
+  "Multiforce": "2026-10-21T16:30:11+00:00",
+  "Shell Recharge": "2026-10-21T16:30:11+00:00",
+  "RHG ENERTÜRK": "2026-10-21T16:30:11+00:00",
+  "Porty": "2026-10-21T16:30:11+00:00",
+  "Electrise": "2026-10-21T16:30:11+00:00",
+  "Plug&Drive (PGD Enerji)": "2026-10-21T16:30:11+00:00",
+  "Fortis Şarj": "2026-10-21T16:30:11+00:00",
+  "Petrol Ofisi e-POwer": "2026-10-21T16:30:11+00:00",
+  "Otowatt": "2026-10-21T16:30:11+00:00",
+  "VOLTGO": "2026-10-21T16:30:11+00:00",
+  "Vale": "2026-10-21T16:30:11+00:00",
+  "EC EVC Charge": "2026-10-21T16:30:11+00:00",
+  "iŞarj": "2026-10-21T16:30:11+00:00",
+  "Hızzlan Charge / N'Drive": "2026-10-21T16:30:11+00:00",
+  "Ovolt": "2026-10-21T16:30:11+00:00",
+  "Şarj Mahal": "2026-10-21T16:30:11+00:00",
+  "D-Charge": "2026-10-21T16:30:11+00:00",
+  "Obişarj": "2026-10-21T16:30:11+00:00",
+  "Solarşarj": "2026-10-21T16:30:11+00:00",
+  "K-Şarj": "2026-10-21T16:30:11+00:00"
+ },
+ "src": {
+  "5Şarj": "araclo",
+  "Aksa Sarj": "araclo",
+  "Astor Sarj": "araclo",
+  "Beefull": "araclo",
+  "CV Charging": "araclo",
+  "Elaris": "araclo",
+  "Enyakit": "araclo",
+  "Esarj": "araclo",
+  "EV-Bee": "araclo",
+  "GIO EV": "araclo",
+  "Lumicle": "araclo",
+  "Oncharge": "araclo",
+  "Oto-Jet": "araclo",
+  "Otopriz": "araclo",
+  "Power Şarj": "araclo",
+  "RST Charge Point": "araclo",
+  "Sarjon": "araclo",
+  "Sharz": "araclo",
+  "Toger": "araclo",
+  "Tora Şarj": "araclo",
+  "Trugo": "araclo",
+  "Tuncmatik Charge": "araclo",
+  "Volti": "araclo",
+  "Voltrun": "araclo",
+  "WAT Mobilite": "araclo",
+  "ZES": "araclo",
+  "Swapp": "sarjfiyatlari",
+  "Vzx Şarj (Vizyoneks)": "sarjfiyatlari",
+  "Tesla Supercharger": "sarjfiyatlari",
+  "Magicline": "sarjfiyatlari",
+  "360° enerji": "sarjfiyatlari",
+  "Fastgo": "sarjfiyatlari",
+  "Miggo (Migros)": "sarjfiyatlari",
+  "Epsis": "sarjfiyatlari",
+  "Neva Şarj": "sarjfiyatlari",
+  "SepaşCharge": "sarjfiyatlari",
+  "TEDY": "sarjfiyatlari",
+  "TÜVTÜRK": "sarjfiyatlari",
+  "FixCharge": "sarjfiyatlari",
+  "E Econ": "sarjfiyatlari",
+  "G-Charge": "sarjfiyatlari",
+  "Rönesans Charger": "sarjfiyatlari",
+  "Zeplin Enerji": "sarjfiyatlari",
+  "Multiforce": "sarjfiyatlari",
+  "Shell Recharge": "sarjfiyatlari",
+  "RHG ENERTÜRK": "sarjfiyatlari",
+  "Porty": "sarjfiyatlari",
+  "Electrise": "sarjfiyatlari",
+  "Plug&Drive (PGD Enerji)": "sarjfiyatlari",
+  "Fortis Şarj": "sarjfiyatlari",
+  "Petrol Ofisi e-POwer": "sarjfiyatlari",
+  "Otowatt": "sarjfiyatlari",
+  "VOLTGO": "sarjfiyatlari",
+  "Vale": "sarjfiyatlari",
+  "EC EVC Charge": "sarjfiyatlari",
+  "iŞarj": "sarjfiyatlari",
+  "Hızzlan Charge / N'Drive": "sarjfiyatlari",
+  "Ovolt": "sarjfiyatlari",
+  "Şarj Mahal": "sarjfiyatlari",
+  "D-Charge": "sarjfiyatlari",
+  "Obişarj": "sarjfiyatlari",
+  "Solarşarj": "sarjfiyatlari",
+  "K-Şarj": "resmî site"
  }
 }
